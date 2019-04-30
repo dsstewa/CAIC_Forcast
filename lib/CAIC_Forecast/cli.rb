@@ -1,13 +1,14 @@
-require_relative "./cli/version"
-require_relative "./Forcast.rb"
+# require_relative "./cli/version"
+# require_relative "./Forcast.rb"
 
-class CLI
+class CAICForecast::CLI
 
 def call
-  capture_data
-  list_locations
-  menu
-  goodbye
+  puts "It Ran!"
+  # capture_data
+  # list_locations
+  # menu
+  # goodbye
 
 end
 
