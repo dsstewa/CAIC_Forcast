@@ -4,7 +4,7 @@
 class CAICForecast::CLI
 
 def call
-  puts "It Ran!"
+  binding.pry
   # capture_data
   # list_locations
   # menu

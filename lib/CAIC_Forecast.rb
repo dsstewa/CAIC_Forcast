@@ -1,6 +1,7 @@
 
 require "nokogiri"
 require "open-uri"
+require "pry"
 
 require_relative "./CAIC_Forecast/cli"
 require_relative "./CAIC_Forecast/forecast"
