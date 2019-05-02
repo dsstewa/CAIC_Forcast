@@ -1,21 +1,24 @@
-class Forecast
-  attr_accessor :location, :date, :b_treeline, :n_treeline, :a_treeline, :date, :summary
+class CAICForecast::Forecast
+  attr_accessor :location, :date, :f_today, :f_tomorrow
 
   def initialize(location)
    get_forcast(location)
   end
  @@all = []
  def get_forcast(location)
-   @location = "Vail & Summit County"
+   @location = location
    @date = "April 28 2019"
-   @b_treeline = "Moderate"
-   @n_treeline = "Moderate"
-   @a_treeline = "Considerable"
+   @f_today = "Moderate"
+   @f_tomorrow= "Moderate"
    @summary = "Avalanche's are Dangerous, watch out!"
    @@all << self
 
   end
 
+def self.all
+  @@all
+
+end
 
 
 
