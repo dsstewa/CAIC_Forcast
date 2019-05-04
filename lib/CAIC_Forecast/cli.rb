@@ -13,7 +13,7 @@ def call
 end
 
 def capture_data
-  CAICForecast::Forecast.new("Northen Mountians")
+  @forcast = CAICForecast::Forecast.today
   CAICForecast::Forecast.new("Central Mountians")
   CAICForecast::Forecast.new("Southern Mountians")
 
