@@ -7,15 +7,13 @@ def call
 
   capture_data
   list_locations
-  menu
+  #menu
   # goodbye
 
 end
 
 def capture_data
-  @forcast = CAICForecast::Forecast.today
-  CAICForecast::Forecast.new("Central Mountians")
-  CAICForecast::Forecast.new("Southern Mountians")
+  @forcast = CAICForecast::Forecast.todays_forecast
 
 end
 
@@ -24,10 +22,9 @@ end
 
 def list_locations
  puts "Which location would you like to see today's Avalanche Forecast?"
-#binding.pry
- CAICForecast::Forecast.all.each_with_index do |forecast, index|
- puts "#{index + 1}. #{forecast.location}."
-  end
+ CAICForecast::Forecast.todays_forecast.each_with_index do |forecast, index|
+    puts "#{index + 1}. #{forecast.location}."
+   end
  end
 
 def menu
