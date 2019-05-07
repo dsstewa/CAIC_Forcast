@@ -22,7 +22,7 @@ end
 
 def list_locations
  puts "Which location would you like to see today's Avalanche Forecast?"
- CAICForecast::Forecast.todays_forecast.each_with_index do |forecast, index|
+ CAICForecast::Forecast.all.each_with_index do |forecast, index|
     puts "#{index + 1}. #{forecast.location}."
    end
  end

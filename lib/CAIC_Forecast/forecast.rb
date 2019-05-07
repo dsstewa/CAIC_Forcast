@@ -12,6 +12,14 @@ def self.todays_forecast
 
 end
 
+
+def self.refresh
+  @@all = []
+  todays_forecast
+
+end
+
+
  def self.nmountains
    forecast = self.new
    forecast.location = "Northern Mountians"
@@ -19,8 +27,7 @@ end
    forecast.f_today = "Moderate"
    forecast.f_tomorrow= "Moderate"
    forecast.summary = "Avalanche's are Dangerous, watch out!"
-   @@all << self
-   forecast
+   @@all << forecast
   end
 
   def self.cmountains
@@ -30,8 +37,8 @@ end
     forecast.f_today = "High"
     forecast.f_tomorrow= "Moderate"
     forecast.summary = "Avalanche's are Dangerous, watch out!"
-    @@all << self
-    forecast
+    @@all << forecast
+
    end
 
    def self.smountains
@@ -41,8 +48,8 @@ end
      forecast.f_today = "Low"
      forecast.f_tomorrow= "Considerable"
      forecast.summary = "Avalanche's are Dangerous, watch out!"
-     @@all << self
-     forecast
+     @@all << forecast
+
     end
 
 
