@@ -28,7 +28,7 @@ def menu
   selection = nil
 
   while selection != "exit"
-    puts "Please type the number of the forecast zone or exit to quite"
+    puts "Please type the number of the forecast zone or exit to exit"
     selection = gets.chomp
     if selection.to_i > 0
        CAICForecast::Forecast.forecast_from_selection(selection)

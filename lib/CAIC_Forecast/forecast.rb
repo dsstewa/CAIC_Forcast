@@ -13,7 +13,18 @@ def self.todays_forecast
 end
 
 def self.forecast_from_selection(zone)
-  binding.pry
+  zonei = @@all[zone.to_i - 1]
+
+  puts "The forecast for the #{zonei.location} is #{zonei.f_today} today (#{zonei.date})."
+  puts "The forecast for tomorrow is #{zonei.f_tomorrow}"
+  puts "Would you like to read the forecast summary? (y/n)"
+  selection = gets.chomp
+  if selection == "y"
+      puts "#{zonei_summary}"
+    end
+
+
+  puts "Thanks for checking the Forecast Today!"
 
 end
 
