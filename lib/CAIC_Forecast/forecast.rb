@@ -41,9 +41,14 @@ end
 
  def self.nmountains
   doc = Nokogiri::HTML(open("https://avalanche.state.co.us/forecasts/regional-avalanche/northern-mountains/"))
+  doc.css("div.site-inner").each do |value|
+    binding.pry
+  end
+
+
   binding.pry
    forecast = self.new
-   forecast.location = "Northern Mountians"
+   forecast.location = doc.css("div.site-inner h1").text
    forecast.date = "April 28 2019"
    forecast.f_today = "Moderate"
    forecast.f_tomorrow= "Moderate"
