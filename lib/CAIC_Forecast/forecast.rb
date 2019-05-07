@@ -20,7 +20,7 @@ def self.forecast_from_selection(zone)
   puts "Would you like to read the forecast summary? (y/n)"
   selection = gets.chomp
   if selection == "y"
-      puts "#{zonei_summary}"
+      puts "#{zonei.summary}"
     end
 
 

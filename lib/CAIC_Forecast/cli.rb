@@ -6,7 +6,7 @@ class CAICForecast::CLI
 def call
 
   capture_data
-  list_locations
+  #list_locations
   menu
   # goodbye
 
@@ -18,7 +18,6 @@ def capture_data
 end
 
 def list_locations
- puts "Which location would you like to see today's Avalanche Forecast?"
  CAICForecast::Forecast.all.each_with_index do |forecast, index|
     puts "#{index + 1}. #{forecast.location}."
    end
@@ -26,8 +25,9 @@ def list_locations
 
 def menu
   selection = nil
-
+   puts "Which location would you like to see today's Avalanche Forecast?"
   while selection != "exit"
+   list_locations
     puts "Please type the number of the forecast zone or exit to exit"
     selection = gets.chomp
     if selection.to_i > 0
