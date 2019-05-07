@@ -25,15 +25,15 @@ def list_locations
  end
 
 def menu
-  puts "Please type the number of the forecast zone or exit to quite"
-  binding.pry
   selection = nil
   while selection != "exit"
+    puts "Please type the number of the forecast zone or exit to quite"
     selection = gets.chomp
-  end
-  puts "you exited the loop"
+     CAICForecast::Forecast.forecast_from_selection(selection)   
 
-end
+    end
+  puts "you exited the loop"
+ end
 
 
 

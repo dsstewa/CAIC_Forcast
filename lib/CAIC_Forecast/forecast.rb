@@ -12,6 +12,14 @@ def self.todays_forecast
 
 end
 
+def self.forecast_from_selection(zone)
+  binding.pry
+
+end
+
+
+
+
 
 def self.refresh
   @@all = []
