@@ -41,9 +41,7 @@ end
 
  def self.nmountains
   doc = Nokogiri::HTML(open("https://avalanche.state.co.us/forecasts/regional-avalanche/northern-mountains/"))
-  doc.css("div.site-inner").each do |value|
-    binding.pry
-  end
+
 
 
   binding.pry
