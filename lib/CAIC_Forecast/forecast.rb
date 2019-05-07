@@ -40,6 +40,8 @@ end
 
 
  def self.nmountains
+  doc = Nokogiri::HTML(open("https://avalanche.state.co.us/forecasts/regional-avalanche/northern-mountains/"))
+  binding.pry
    forecast = self.new
    forecast.location = "Northern Mountians"
    forecast.date = "April 28 2019"
