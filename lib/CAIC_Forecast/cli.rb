@@ -6,9 +6,7 @@ class CAICForecast::CLI
 def call
 
   capture_data
-  #list_locations
   menu
-  # goodbye
 
 end
 
@@ -36,11 +34,14 @@ def menu
      end
 
     end
-  puts "you exited the loop"
+  goodbye
  end
 
-
-
+def goodbye
+puts "********************************************************"
+puts "Thanks for checking the forecast, stay safe out there!"
+puts "********************************************************"
+end
 end
 
 #// ♥ ruby ./bin/CAIC_Forecast
