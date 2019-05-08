@@ -39,8 +39,8 @@ end
    forecast = self.new
    forecast.location = doc.css("h1.page-title").text
    forecast.date = doc.css("span.Issued_At--at--value").text
-   forecast.f_today = "Moderate"
-   forecast.f_tomorrow= "Moderate"
+   forecast.f_today = doc.css("text")[2].text
+   forecast.f_tomorrow= doc.css("text")[3].text
    forecast.summary = doc.css("div.Blurb p").text
    @@all << forecast
   end
@@ -52,8 +52,8 @@ doc = Nokogiri::HTML(open("https://embedded-rails-production.avalanche.state.co.
     forecast = self.new
     forecast.location = doc.css("h1.page-title").text
     forecast.date = doc.css("span.Issued_At--at--value").text
-    forecast.f_today = "High"
-    forecast.f_tomorrow= "Moderate"
+    forecast.f_today = doc.css("text")[2].text
+    forecast.f_tomorrow= doc.css("text")[3].text
     forecast.summary = doc.css("div.Blurb p").text
     @@all << forecast
 
@@ -64,8 +64,8 @@ doc = Nokogiri::HTML(open("https://embedded-rails-production.avalanche.state.co.
      forecast = self.new
      forecast.location = doc.css("h1.page-title").text
      forecast.date = doc.css("span.Issued_At--at--value").text
-     forecast.f_today = "Low"
-     forecast.f_tomorrow= "Considerable"
+     forecast.f_today = doc.css("text")[2].text
+     forecast.f_tomorrow= doc.css("text")[3].text
      forecast.summary = doc.css("div.Blurb p").text
      @@all << forecast
 
