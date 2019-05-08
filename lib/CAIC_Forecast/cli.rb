@@ -7,7 +7,7 @@ def call
 
   capture_data
   #list_locations
-  #menu
+  menu
   # goodbye
 
 end
