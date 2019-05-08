@@ -1,8 +1,6 @@
 # CAICForecast
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/CAIC_Forecast`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the CAIC Forecast Gem! CAIC stands for the Colorado Avalanche Information Center and is primary supported by donations. CAIC provides daily and one day look ahead forecasts of the current avalanche conditions in Colorado. During the spring season only three regions of the state receive daily forecasts. This gem will scrape the CAIC website, you will then be prompted for which region you would like the forecast from. At that point you can select the region, and the program will provide you with the forecast.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run the program, ensure all requirments are installed by running "bundle install"... to start the program type "ruby ./bin/CAIC_Forecast"
 
 ## Development
 
