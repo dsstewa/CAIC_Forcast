@@ -9,12 +9,10 @@ def self.todays_forecast
     forecasts << self.cmountains
     forecasts << self.smountains
     forecasts
-
 end
 
 def self.forecast_from_selection(zone)
   zonei = @@all[zone.to_i - 1]
-
   puts "The forecast for the #{zonei.location} is #{zonei.f_today} today (#{zonei.date})."
   puts "The forecast for tomorrow is #{zonei.f_tomorrow}"
   puts "Would you like to read the forecast summary? (y/n)"
@@ -22,20 +20,13 @@ def self.forecast_from_selection(zone)
   if selection == "y"
       puts "#{zonei.summary}"
     end
-
-
   puts "Thanks for checking the Forecast Today!"
-
 end
-
-
-
 
 
 def self.refresh
   @@all = []
   todays_forecast
-
 end
 
 
@@ -50,28 +41,32 @@ end
    forecast.date = doc.css("span.Issued_At--at--value").text
    forecast.f_today = "Moderate"
    forecast.f_tomorrow= "Moderate"
-   forecast.summary = "Avalanche's are Dangerous, watch out!"
+   forecast.summary = doc.css("div.Blurb p").text
    @@all << forecast
   end
 
   def self.cmountains
+
+doc = Nokogiri::HTML(open("https://embedded-rails-production.avalanche.state.co.us/forecasts/regional-forecast/central"))
+
     forecast = self.new
-    forecast.location = "Central Mountians"
-    forecast.date = "April 29 2019"
+    forecast.location = doc.css("h1.page-title").text
+    forecast.date = doc.css("span.Issued_At--at--value").text
     forecast.f_today = "High"
     forecast.f_tomorrow= "Moderate"
-    forecast.summary = "Avalanche's are Dangerous, watch out!"
+    forecast.summary = doc.css("div.Blurb p").text
     @@all << forecast
 
    end
 
    def self.smountains
+     doc = Nokogiri::HTML(open("https://embedded-rails-production.avalanche.state.co.us/forecasts/regional-forecast/southern"))
      forecast = self.new
-     forecast.location = "Southern Mountians"
-     forecast.date = "April 30 2019"
+     forecast.location = doc.css("h1.page-title").text
+     forecast.date = doc.css("span.Issued_At--at--value").text
      forecast.f_today = "Low"
      forecast.f_tomorrow= "Considerable"
-     forecast.summary = "Avalanche's are Dangerous, watch out!"
+     forecast.summary = doc.css("div.Blurb p").text
      @@all << forecast
 
     end
