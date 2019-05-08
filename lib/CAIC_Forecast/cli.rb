@@ -25,8 +25,9 @@ def list_locations
 
 def menu
   selection = nil
-   puts "Which location would you like to see today's Avalanche Forecast?"
+   puts "---------------------------------------------------------------"
   while selection != "exit"
+    puts "Which location would you like to see today's Avalanche Forecast?"
    list_locations
     puts "Please type the number of the forecast zone or exit to exit"
     selection = gets.chomp

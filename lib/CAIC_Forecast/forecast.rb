@@ -13,6 +13,8 @@ end
 
 def self.forecast_from_selection(zone)
   zonei = @@all[zone.to_i - 1]
+  puts "---------------------------------------------------------------------"
+  puts "---------------------------------------------------------------------"
   puts "The forecast for the #{zonei.location} is #{zonei.f_today} today (#{zonei.date})."
   puts "The forecast for tomorrow is #{zonei.f_tomorrow}"
   puts "Would you like to read the forecast summary? (y/n)"
@@ -21,6 +23,8 @@ def self.forecast_from_selection(zone)
       puts "#{zonei.summary}"
     end
   puts "Thanks for checking the Forecast Today!"
+  puts "---------------------------------------------------------------------"
+  puts "---------------------------------------------------------------------"
 end
 
 
@@ -32,10 +36,6 @@ end
 
  def self.nmountains
   doc = Nokogiri::HTML(open("https://embedded-rails-production.avalanche.state.co.us/forecasts/regional-forecast/northern"))
-
-
-
-  binding.pry
    forecast = self.new
    forecast.location = doc.css("h1.page-title").text
    forecast.date = doc.css("span.Issued_At--at--value").text
