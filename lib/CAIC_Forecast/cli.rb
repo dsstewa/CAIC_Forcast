@@ -29,13 +29,26 @@ def menu
    list_locations
     puts "Please type the number of the forecast zone or exit to exit"
     selection = gets.chomp
-    if selection.to_i > 0
+   # binding.pry
+    if selection.to_i > 0 && selection.to_i <= CAICForecast::Forecast.all.length
        CAICForecast::Forecast.forecast_from_selection(selection)
+       
+     else
+       bad_entry
      end
 
     end
   goodbye
  end
+
+
+def bad_entry
+puts "--------------------------------------------------------------"
+puts "Please make a selection 1 - #{CAICForecast::Forecast.all.length}"
+puts "--------------------------------------------------------------"
+end
+
+
 
 def goodbye
 puts "********************************************************"
